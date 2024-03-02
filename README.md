@@ -65,7 +65,7 @@ Here's a simple example to demonstrate a player vs. player game setup and execut
 const game = new TicTacToe();
 
 // Adding two players
-game.players.add(['529658487949754368', '500969672250884106']);
+game.players.add([529658487949754368, 500969672250884106]);
 console.log(game.data.started); // Output: false
 game.start();
 console.log(game.data.started); // Output: true
@@ -79,6 +79,6 @@ game.players.get('529658487949754368').move(2, 0);
 
 // Checking game end and winner
 console.log(game.data.ended); // Output: true
-console.log(game.data.winner); // Output: '529658487949754368'
+console.log(game.data.winner); // Output: 529658487949754368
 
 ```
