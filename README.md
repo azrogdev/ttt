@@ -36,7 +36,7 @@ Players are automatically added, and you can start the game directly.
 ```js
 game.start();
 ```
-**In player vs. player mode:**
+**In player vs player mode:**
 
 You must add the players manually before starting the game.
 ```js
@@ -50,7 +50,7 @@ The process of making a move is termed as 'move' because it signifies the action
 ```js
 game.player.move(0, 0); // To place your symbol at position (0,0)
 ```
-**In player vs. player mode:**
+**In player vs player mode:**
 ```js
 game.players.get('playerId').move(0, 0); // Replace 'playerId' with the current player id.
 ```
