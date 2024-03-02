@@ -96,7 +96,7 @@ class TicTacToe {
             /**
             * Represents the get function.
             * @constructor
-            * @param {object|number} id - the id of the player to get.
+            * @param {number} id - the id of the player to get.
             * @returns {object} the player data.
             */
             get: function (id) {
@@ -155,6 +155,7 @@ class TicTacToe {
     }
     /**
      * Represents the function to start the game.
+     * @returns {void}
      */
     start() {
         if (!this.bot && this.data.players !== 2) return;
@@ -178,6 +179,8 @@ class TicTacToe {
     }
     /**
      * Represents the function to get the player. available whenever the game is against the bot.
+     * @constructor
+     * @returns {object|null}
      */
     get player() {
         if (this.bot && this.data.started) {
@@ -188,6 +191,8 @@ class TicTacToe {
                 return {
                     /**
                      * Represents the function to get the player id.
+                     * @constructor
+                     * @returns {number} player id
                      */
                     get id() {
                         return player.id;
@@ -195,6 +200,10 @@ class TicTacToe {
                     thisPlayer,
                     /**
                      * Represents the function to move the player.
+                     * @constructor
+                     * @param {number} x - the x coordinates.
+                     * @param {number} y - the y coordinates.
+                     * @returns {void}
                      */
                     move: function (x, y) {
                         thisPlayer.move(x, y, instance);
@@ -230,6 +239,7 @@ class TicTacToe {
     }
     /**
      * Represents the function to get the best move for the player to train him.
+     * @returns {object} the data of the best movement for the player.
      */
     trainingMove() {
         if (!this.bot) return;
@@ -353,6 +363,11 @@ class TicTacToe {
             return minEval;
         }
     }
+    /**
+     * Represents the function to make move the bot.
+     * @constructor
+     * @returns {void}
+     */
     botMove() {
         if (!this.bot) return;
         if (!this.data.started) return;
@@ -393,6 +408,12 @@ class TicTacToe {
             return; // not any available moves
         }
     }
+    /**
+     * Represents the function to verify if a grid is the valid grid.
+     * @constructor
+     * @param {object} grid - the grid to verify.
+     * @returns {boolean}
+     */
     isAGrid(grid) {
         const originalGrid = this.grid;
         for (let i = 0; i < 3; i++) {
@@ -402,6 +423,13 @@ class TicTacToe {
         }
         return true;
     }
+    /**
+     * Represents the function to verify if a player won.
+     * @constructor
+     * @param {string} symbol - the symbol to verify.
+     * @param {object} originalGrid - the grid to verify.
+     * @returns {boolean}
+     */
     hasWin(symbol, originalGrid) {
         if (!this.data.started) return;
         if (this.data.ended) return;
@@ -430,6 +458,12 @@ class TicTacToe {
 
         return diagonalFilled() || lineOrColumnFilled();
     }
+    /**
+     * Represents the function to verify if the game is draw.
+     * @constructor
+     * @param {object} originalGrid - the grid to verify.
+     * @returns {boolean}
+     */
     checkDraw(originalGrid) {
         if (!originalGrid || !this.isAGrid(originalGrid)) throw new Error("'originalGrid' is not specified or invalid.")
         const grid = JSON.parse(JSON.stringify(originalGrid))
