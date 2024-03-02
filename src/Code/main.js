@@ -510,9 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
         morpion = new TicTacToe({ difficulty: dif });
         morpion.start()
         data = true;
-
-        const randomNumber = Math.floor(Math.random() * 2);
-        if (randomNumber === 0) {
+        if (morpion.data.player1 === 42) {
             morpion.botMove();
             updateGameInfo("First player : bot");
             updateGameBoard();
