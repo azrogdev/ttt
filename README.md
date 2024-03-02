@@ -71,7 +71,7 @@ game.start();
 console.log(game.data.started); // Output: true
 
 // Simulating a series of moves
-game.players.get'529658487949754368).move(0, 0); // you can also get the player1 with game.players.get(game.data.player1) and the player2 with game.players.get(game.data.player2)
+game.players.get(529658487949754368).move(0, 0); // you can also get the player1 with game.players.get(game.data.player1) and the player2 with game.players.get(game.data.player2)
 game.players.get(500969672250884106).move(0, 2);
 game.players.get(529658487949754368).move(1, 0);
 game.players.get(500969672250884106).move(1, 2);
