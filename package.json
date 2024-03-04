@@ -1,0 +1,31 @@
+{
+  "name": "@azrogdev/ttt",
+  "version": "1.0.1",
+  "description": "an advanced tictactoe module",
+  "main": "./dist/main.js",
+  "type": "module",
+  "types": "./types/main.d.ts",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "build": "babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azrogdev/ttt.git"
+  },
+  "keywords": [
+    "tictactoe"
+  ],
+  "author": "azrogdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azrogdev/ttt/issues"
+  },
+  "homepage": "https://github.com/azrogdev/ttt#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "typescript": "^5.3.3"
+  }
+}
