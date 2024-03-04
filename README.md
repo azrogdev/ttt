@@ -10,6 +10,18 @@ The TicTacToe module is a versatile implementation of the classic game designed 
 
 ## Getting Started
 
+### Installation
+
+Make sure to install the package with :
+```bash
+npm i @azrogdev/ttt
+```
+and setup your `package.json` with :
+```json
+"type": "module"
+```
+to use ES6 imports.
+
 ### Configuration
 
 Start by creating your TicTacToe game instance. You can configure it to face off against the bot, including options for training mode and adjustable difficulty, or set it up for a classic player vs. player matchup.
@@ -17,6 +29,8 @@ Start by creating your TicTacToe game instance. You can configure it to face off
 **To play against the bot with training mode and adjustable difficulty:**
 
 ```js
+import { TicTacToe } from '@azrogdev/ttt';
+
 const game = new TicTacToe({
     bot: true,
     training: true, // Enable training mode for suggestions on the best moves
@@ -62,8 +76,13 @@ The game concludes when `game.data.ended` is set to true. You can check `game.da
 ## Example
 Here's a simple example to demonstrate a player vs. player game setup and execution:
 ```js
+import { TicTacToe, Events } from '@azrogdev/ttt';
+
 const game = new TicTacToe();
 
+game.on(Events.gameEnded, (data) => {
+    console.log(data.winner) // Output: 529658487949754368 (example)
+})
 // Adding two players
 game.players.add([529658487949754368, 500969672250884106]);
 console.log(game.data.started); // Output: false
@@ -76,9 +95,4 @@ game.players.get(500969672250884106).move(0, 2);
 game.players.get(529658487949754368).move(1, 0);
 game.players.get(500969672250884106).move(1, 2);
 game.players.get(529658487949754368).move(2, 0);
-
-// Checking game end and winner
-console.log(game.data.ended); // Output: true
-console.log(game.data.winner); // Output: 529658487949754368
-
 ```
