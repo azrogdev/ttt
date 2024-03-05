@@ -10,6 +10,13 @@ The TicTacToe module is a versatile implementation of the classic game designed 
 
 ## Getting Started
 
+## Prerequisites
+| Requirement       | Description                                                                                               |
+|-------------------|-----------------------------------------------------------------------------------------------------------|
+| Node.js           | Version 14.x or higher required for optimal compatibility with the project's ES6, ES2016, and ESNext features. |
+
+
+
 ### Installation
 
 Make sure to install the package with :
