@@ -1,4 +1,4 @@
-# TicTacToe Module
+# @azrogdev/ttt
 
 The TicTacToe module is a versatile implementation of the classic game designed to be integrated into various projects. It offers a range of features to accommodate different play styles, including matches against an AI bot, playing against another player, and a unique training mode to refine your strategies. Whether you're a developer looking to include a fun element in your project or a player seeking a customizable TicTacToe experience, this module is tailored for you.
 
