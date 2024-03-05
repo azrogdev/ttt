@@ -19,10 +19,12 @@ class Player implements PlayerOptions {
         this.symbol = options.symbol ?? undefined;
    }
 
-   move(x: number, y: number, instance: GameInstance): void {
-        if (!instance.data.started || instance.data.ended) return;
+   move(x: number, y: number): void {
+          const instance = this.instance;
+        if (!instance.data.started || instance.data.ended || instance.data.currentPlayer !== this.id || this.bot) return;
         if (x > 2 || x < 0 || y > 2 || y < 0 ) throw new Error('Invalid move');
-        if (Number(instance.grid[y][x]) !== 0) return instance.emit(Events.MoveMade, { sucess: false });
+        if (Number(instance.grid[y][x]) !== 0) return instance.emit(Events.Move, { sucess: false });
+        return instance.emit(Events.Move, { sucess: true, x: x, y: y, symbol: this.symbol }); 
    }
 }
 
