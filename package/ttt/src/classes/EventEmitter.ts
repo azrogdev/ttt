@@ -1,8 +1,9 @@
 enum Events {
-  init = "init",
-  MoveMade = "moveMade",
-  GameStarted = "gameStarted",
-  GameEnded = "gameEnded",
+  Move = "MOVE",
+  GameStarted = "GAME_STARTED",
+  GameEnded = "GAME_ENDED",
+  UpdateGrid = "UPDATE_GRID",
+  TrainingMove = "TRAINING_MOVE"
 }
 
 class EventEmitter {
