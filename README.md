@@ -11,5 +11,3 @@ The second part of the project comprises the pure JavaScript source code, along 
 
 ### Getting Started
 To get started with the TicTacToe Project, clone this repository to your local machine. Navigate to the desired component directory (`/package/ttt` for the package or `/src` for the source code and web example) to explore the contents. Follow the `.md` files located within each directory for detailed instructions on how to use the package or run the web example.
-
-Thank you for visiting the TicTacToe Project (ttt). Enjoy exploring and building with this project!
