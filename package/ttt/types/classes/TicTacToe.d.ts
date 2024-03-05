@@ -6,6 +6,7 @@ interface GameData {
     winner: number | null;
     player1: number | null;
     player2: number | null;
+    currentPlayer: number | null;
 }
 interface GameInstance {
     data: GameData;
@@ -23,8 +24,16 @@ interface GameOptions {
 }
 interface GetterPlayer {
     cache: Array<Player>;
-    add(ids: number | number[], force: boolean): void;
+    add(ids: number | number[]): void;
     get(id: number): (Player | undefined);
+}
+interface MoveData {
+    x: number;
+    y: number;
+}
+interface MoveScore {
+    move: MoveData;
+    score: number;
 }
 declare class TicTacToe extends EventEmitter implements GameOptions {
     bot?: boolean | undefined;
@@ -35,5 +44,18 @@ declare class TicTacToe extends EventEmitter implements GameOptions {
     constructor(options?: GameOptions);
     private init;
     get players(): GetterPlayer;
+    start(): void;
+    private nextPlayer;
+    private makeMove;
+    private undoMove;
+    private getAvailableMoves;
+    private hasWin;
+    private checkDraw;
+    private minimax;
+    private randomMoves;
+    private decideNextMove;
+    private botMove;
+    private trainingMove;
+    get player(): (Player | undefined);
 }
-export { TicTacToe, GameInstance, GameData, GameOptions, GetterPlayer };
+export { TicTacToe, GameInstance, GameData, GameOptions, GetterPlayer, MoveData, MoveScore };
