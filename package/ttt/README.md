@@ -73,6 +73,8 @@ The game concludes when `game.data.ended` is set to true. You can check `game.da
 
 - Against the bot, player IDs are predefined as **666** for the human and **42** for the bot.
 - `game.data.winner` will be null in the event of a draw.
+- A turn-based system is included and automatically activates after `game.start()` is called. It prevents players from taking consecutive turns.
+- List of the availables events: `GameStarted`, `GameEnded`, `UpdateGrid`, `Move`, and `TrainingMove`.
 ## Example
 Here's a simple example to demonstrate a player vs. player game setup and execution:
 ```js
@@ -82,18 +84,18 @@ const game = new TicTacToe();
 
 game.on(Events.TrainingMove, (data) => {
     const { x, y } = data;
-    game.player.move(x, y); // only available if bot setup on true, and same for training.
+    game.player.move(x, y); // Only available if bot setup on true, and same for training.
 })
 
 game.on(Events.GameEnded, (data) => {
     const { winner, state } = data;
-    if (state === "draw") return; // its a draw else state is equal to 'win'
+    if (state === "draw") return; // Its a draw else state is equal to 'win'
     console.log(winner) // Output: 529658487949754368 (example)
 })
 
 game.on(Events.UpdateGrid, (data) => {
     const { grid } = data;
-    console.log(grid) // or whatever to update the display
+    console.log(grid) // Or whatever to update the display
 })
 // Adding two players
 game.players.add([529658487949754368, 500969672250884106]);
