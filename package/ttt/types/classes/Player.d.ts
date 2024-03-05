@@ -9,6 +9,6 @@ declare class Player implements PlayerOptions {
     id: number;
     private instance;
     constructor(id: number, instance: GameInstance, options?: PlayerOptions);
-    move(x: number, y: number, instance: GameInstance): void;
+    move(x: number, y: number): void;
 }
 export { Player, PlayerOptions };
