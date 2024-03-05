@@ -1,9 +1,10 @@
 var Events;
 (function (Events) {
-    Events["init"] = "init";
-    Events["MoveMade"] = "moveMade";
-    Events["GameStarted"] = "gameStarted";
-    Events["GameEnded"] = "gameEnded";
+    Events["Move"] = "MOVE";
+    Events["GameStarted"] = "GAME_STARTED";
+    Events["GameEnded"] = "GAME_ENDED";
+    Events["UpdateGrid"] = "UPDATE_GRID";
+    Events["TrainingMove"] = "TRAINING_MOVE";
 })(Events || (Events = {}));
 class EventEmitter {
     constructor() {
