@@ -80,8 +80,20 @@ import { TicTacToe, Events } from '@azrogdev/ttt';
 
 const game = new TicTacToe();
 
-game.on(Events.gameEnded, (data) => {
-    console.log(data.winner) // Output: 529658487949754368 (example)
+game.on(Events.TrainingMove, (data) => {
+    const { x, y } = data;
+    game.player.move(x, y); // only available if bot setup on true, and same for training.
+})
+
+game.on(Events.GameEnded, (data) => {
+    const { winner, state } = data;
+    if (state === "draw") return; // its a draw else state is equal to 'win'
+    console.log(winner) // Output: 529658487949754368 (example)
+})
+
+game.on(Events.UpdateGrid, (data) => {
+    const { grid } = data;
+    console.log(grid) // or whatever to update the display
 })
 // Adding two players
 game.players.add([529658487949754368, 500969672250884106]);
@@ -90,9 +102,12 @@ game.start();
 console.log(game.data.started); // Output: true
 
 // Simulating a series of moves
-game.players.get(529658487949754368).move(0, 0); // you can also get the player1 with game.players.get(game.data.player1) and the player2 with game.players.get(game.data.player2)
-game.players.get(500969672250884106).move(0, 2);
-game.players.get(529658487949754368).move(1, 0);
-game.players.get(500969672250884106).move(1, 2);
-game.players.get(529658487949754368).move(2, 0);
+const player1 = game.data.player1;
+const player2 = game.data.player2;
+
+game.players.get(player1).move(0, 0);
+game.players.get(player2).move(0, 2);
+game.players.get(player1).move(1, 0);
+game.players.get(player2).move(1, 2);
+game.players.get(player1).move(2, 0);
 ```
