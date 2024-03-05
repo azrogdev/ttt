@@ -4,7 +4,7 @@ Welcome to my **TicTacToe Project (ttt)**, a modern and responsive approach to t
 
 ### Package: @azrogdev/ttt
 The first part of the project is the `@azrogdev/ttt` package. This package encapsulates the core logic and functionalities required to run a TicTacToe game. It is implemented in a modular fashion, allowing for easy integration into various web projects or applications. You can find this package under `/package/ttt`. This structure ensures that developers can quickly access and utilize the package in their projects, benefiting from the predefined logic and functionalities that it offers.
-You can easily install the package and use it with the doc, follow `/package/ttt/doc.md` for more information.
+You can easily install the package and use it with the doc, follow `/package/ttt/README.md` for more information.
 
 ### Pure JavaScript Source Code with a Web Example
 The second part of the project comprises the pure JavaScript source code, along with a web-based example of the TicTacToe game. This is located in the `/src` directory. The source code is written in plain **JavaScript**, **HTML**, and **CSS**, demonstrating how to create a responsive and modern-looking TicTacToe game from scratch. The included web example serves as a practical demonstration of the game in action, showcasing the interactive elements and the game's flow. This section is particularly useful for developers looking to understand the game's implementation details or those interested in developing their version of the game using the provided code as a foundation.
