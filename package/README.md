@@ -120,3 +120,46 @@ game.players.get(player1).move(1, 0);
 game.players.get(player2).move(1, 2);
 game.players.get(player1).move(2, 0);
 ```
+### Events
+
+`GameStarted` : is triggered every time a game starts.
+```js
+game.on(Events.GameStarted, (data) => {
+    const { player1, player2, players } = data;
+
+    console.log(player1) // Output: id of the first player.
+    console.log(player2) // Output: id of the second player.
+    console.log(players) // Output: An array of the players.
+})
+```
+`Move` : is triggered every time a move is made.
+```js
+game.on(Events.Move, (data) =>  {
+    if (!data.sucess) return; // The move is illegal.
+
+    const {x, y} = data;
+    console.log(x, y) // Output: the coordinates x and y of the move.
+})
+```
+`TrainingMove` : is triggered every time its your turn and you had the training option enabled.
+```js
+game.on(Events.TrainingMove, (data) => {
+    const {x, y} = data;
+    console.log(x, y) // Output: the coordinates x and y of the move.
+})
+```
+`UpdateGrid` : is triggered every time the grid is updated because a movement has been made.
+```js
+game.on(Events.UpdateGrid, (data) => {
+    console.log(data.grid) // Output: the grid updated
+})
+```
+`GameEnded` : is triggered every time a game ends.
+```js
+game.on(Events.GameEnded, (data) => {
+    const { winner, state } = data;
+
+    console.log(winner) // Output: id of the player who won.
+    console.log(state) // Output: 'draw' or 'win'
+})
+```
