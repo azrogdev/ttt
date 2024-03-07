@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [1.1.1] - 2024-03-07
+
+### Fixed
+- Improved the validations of the different parameters when they were provided.
+
+### Added
+- **Data Functions**: Introduced `Save` and `Restore` functions to save and restore the state of a game. These functions automatically handle JSON format, providing a robust mechanism for managing game state across sessions.
+- **Validation Mechanism**: Implemented a comprehensive validation mechanism using `validateProperty` function. This ensures that all inputs and states are verified against expected types and values, significantly reducing the likelihood of errors due to invalid data.
+- **New Format**: Now you can easily manipulate the grid with the property `flatGrid` who return a `1d` grid.
+
+### Changed
+- **Game Logic Optimization**: Refined several aspects of the game logic to enhance performance and user experience. This includes optimizing the grid handling and the win condition checks to be more efficient.
+
+### Security
+- Enhanced security measures to protect against potential data manipulation. All game state data is now thoroughly validated both when saving and restoring, ensuring that only valid states are processed.
 
 ## [1.1.0] - 2024-03-06
 
