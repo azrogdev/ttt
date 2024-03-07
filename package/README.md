@@ -163,3 +163,19 @@ game.on(Events.GameEnded, (data) => {
     console.log(state) // Output: 'draw' or 'win'
 })
 ```
+### Functions
+`Save` : save the currently game state.
+```js
+import { TicTacToe, Save } from '@azrogdev/ttt';
+const game = new TicTacToe();
+
+const backup = Save(game);
+// or
+const backupJSON = Save(game, true) // When the second parameter is set on true, the function Save return a JSON.
+```
+`Restore` : restore a game with his data.
+```js
+import { Restore } from '@azrogdev/ttt';
+const backup = ""; // Replace with you backup saved.
+const game = Restore(backup) // Return a TicTacToe instance, automatically handle the JSON format.
+```
